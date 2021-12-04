@@ -1,0 +1,19 @@
+name: get-commit-id
+
+on: push
+
+jobs:
+  get_commit_id:
+    runs-on: ubuntu-20.04
+    name: "Get commit id"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Get commit id
+        id: get_commit_id
+        uses: ./
+      - name: Check commit ids
+        run: |
+          echo "COMMIT ID:" ${{ steps.get_commit_id.outputs.commit_id }}
+          echo "SHORT COMMIT ID:" ${{ steps.get_commit_id.outputs.short_commit_id }}
+          
