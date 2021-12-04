@@ -1,0 +1,16 @@
+name: "Get commit id"
+description: "Get commit id of a directory(git repository)"
+
+inputs:
+  path:
+    description: "The directory which you'd like to get commit id(default: current directory)"
+    required: true
+    default: "."
+outputs:
+  commit_id:
+    description: "commit_id"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.path}}
