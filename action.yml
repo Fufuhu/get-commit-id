@@ -8,7 +8,10 @@ inputs:
     default: "."
 outputs:
   commit_id:
-    description: "commit_id"
+    description: "git commit id"
+  short_commit_id:
+    description: "shortened commit id"
+
 runs:
   using: "docker"
   image: "Dockerfile"
